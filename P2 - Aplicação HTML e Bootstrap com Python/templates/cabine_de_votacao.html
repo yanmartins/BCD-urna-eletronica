@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block app_content %}
+{% block jumbotron %}
+    <div class="jumbotron">
+        <h1>Cabine de votação</h1>
+        <h2>{{ eleicao }}</h2>
+    </div>
+        <form action="{{ url_for('cabine') }}"  method=post>
+            {% for linha in lista %}
+                <tr>
+                    <h3>{{ linha.questao }} </h3>
+                    <p class="text-info">({{ linha.numeroDeAlternativas }} voto(s))</p>
+                    {% for linhaA in alternativa %}
+                        <tr>
+
+                        {% if linhaA.idQuestao == linha.idQuestao %}
+                            {% if linhaA.alternativa != 'Nulo' %}
+                                <div class="form-check">
+                                {% set checado = 'alt-' ~ linhaA.idAlternativa %}
+                                <input type="checkbox" value="{{ linhaA.idAlternativa }}" name="{{ checado }}"> {{ linhaA.alternativa }}<br>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+
+                        </tr>
+                    {% endfor %}
+                </tr>
+                <br>
+                <br>
+            {% endfor %}
+
+
+
+        <input type="submit" class="btn btn-info" value="Finalizar"><BR>
+    </form>
+
+{% endblock jumbotron %}
+{% endblock %}

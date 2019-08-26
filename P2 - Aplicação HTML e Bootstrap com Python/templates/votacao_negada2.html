@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block app_content %}
+    {% block jumbotron %}
+        <div class="jumbotron">
+    <h1 class="text-danger">VOTAÇÃO NEGADA!</h1>
+  <p><a href="{{ url_for('inicio') }}">voltar para a página inicial</a>
+        </div>
+{% endblock jumbotron %}
+{% endblock %}

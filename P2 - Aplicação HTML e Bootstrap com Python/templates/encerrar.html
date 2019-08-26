@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block app_content %}
+{% block jumbotron %}
+    <div class="jumbotron">
+        <h1>Encerrar eleições</h1>
+        <h3>Por favor, selecione as eleições que você deseja encerrar.</h3>
+    </div>
+        <form action="{{ url_for('encerrar') }}"  method=post>
+            {% for linha in lista %}
+                <tr>
+                    {% set checado = 'alt-' ~ linha.idEleicao %}
+                    <input type="checkbox" value="{{ linha.idEleicao }}" name="{{ checado }}"> {{ linha.nome }}<br>
+                </tr>
+            {% endfor %}
+
+
+         <button type="submit">Finalizar</button><br>
+    </form>
+
+{% endblock jumbotron %}
+{% endblock %}

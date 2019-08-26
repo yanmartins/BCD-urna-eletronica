@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block app_content %}
+{% block jumbotron %}
+    <div class="jumbotron">
+        <h2>Seleção de Eleições</h2>
+        <h3>Por favor, selecione a questão na qual você deseja adicionar uma alternativa.</h3>
+    </div>
+
+
+            {% for linha in eleicao %}
+                <h2>{{ linha.nome }}</h2>
+                <table>
+                <thead>
+                    <tr>
+                        <td width="50px">Opção</td>
+                        <td width="500px">Nome</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for linha2 in questao %}
+                    {% if linha.idEleicao == linha2.idEleicao %}
+                <tr>
+                    <td><a href="/criar_alternativa?id={{ linha2.idQuestao }}"> adicionar </a> </td>
+                    <td>{{ linha2.questao }}</td>
+                    <br>
+                </tr>
+                    {% endif %}
+                </tbody>
+                </table>
+                    {% endfor %}
+
+            {% endfor %}
+
+{% endblock jumbotron %}
+
+{% endblock %}

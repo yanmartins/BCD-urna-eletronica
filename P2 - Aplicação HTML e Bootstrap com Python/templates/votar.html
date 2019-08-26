@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block app_content %}
+{% block jumbotron %}
+    <div class="jumbotron">
+        <h2>Seleção de Eleições</h2>
+        <h3>Por favor, selecione a eleição na qual você deseja votar.</h3>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <td width="50px">Opção</td>
+                    <td width="500px">Nome</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            {% for linha in lista %}
+                <tr>
+                    <td><a href="/cabine_de_votacao?id={{ linha.idEleicao }}"> votar </a> </td>
+                    <td>{{ linha.nome }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock jumbotron %}
+
+{% endblock %}
