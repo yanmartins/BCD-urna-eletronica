@@ -6,6 +6,6 @@ Repositório que contém dois projetos elaborados durante a disciplina de Banco 
 
 ## Descrição dos projetos
 
-* **P1 - Aplicação desktop com Java**: Aplicação em Java de um sistema de votação eletrônica.
+* **P1 - Aplicação desktop em Java**: Aplicação em Java de um sistema de votação eletrônica.
 
-* **P2 - Aplicação HTML e Bootstrap com Python**: Aplicação em Python com interface WEB de um sistema de votação eletrônica.
+* **P2 - Aplicação em Python (HTML e Flask-Bootstrap)**: Aplicação em Python com interface WEB de um sistema de votação eletrônica.
